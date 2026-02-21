@@ -38,4 +38,4 @@ Sat Feb 21 11:23:34 JST 2026
 
 ### Adaptive Enemy AI:
 1. The enemies get better as the player gets better, has more resources, gets access to better tools, and as they play the game longer.
-2. The enemies can also get worse if the player is struggling while playing the gameand exhibits other be .
+2. The enemies can also get worse if the player is struggling while playing and dies often.
