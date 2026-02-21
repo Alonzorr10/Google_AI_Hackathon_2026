@@ -2,10 +2,16 @@ Sat Feb 21 11:23:34 JST 2026
 
 ---
 # Layer-1: World Generation and Player Initialization
-
-
-
-
+### 1. World Generation
+    - World will be generated using FFT
+    - Random Generated Seed will be implemented to ensure varying world generation
+    - Structures should also generate randomly as well
+### 2. Player Intialization
+    - Player will be intialized with the following abilities
+        - Movement
+        - Attack
+        - Heal
+    - Player will also be able to interact with the given world that's generated
 
 ---
 # Layer-2: AI-Powered Crafting System (Tools, Weapons, Utilities)
