@@ -4,7 +4,7 @@ Sat Feb 21 11:36:22 JST 2026
 
 ## Style
 
-1. Style: 2D Survival Adventure
+1. Style: 2D Survival Adventure similar too Terraria
 2. Visual Aesthetic: Top-down pixel art with dynamic lighting. Think Core Keeper or Don't Starve. The environment should feel reactive—grass sways when walked upon, and trees cast shadows that grow longer as the day-night cycle progresses.
 
 ## Gameplay
@@ -14,7 +14,7 @@ Sat Feb 21 11:36:22 JST 2026
 
 ---
 
-# Game World
+# Game World: LAYER-1
 
 ## Terrain Generation
 
@@ -31,7 +31,7 @@ Sat Feb 21 11:36:22 JST 2026
 
 ---
 
-# Player
+# Player: LAYER-2
 
 ## Player Movement (PlayerController Object)
 
@@ -47,7 +47,7 @@ Sat Feb 21 11:36:22 JST 2026
 
 ---
 
-# Items
+# Items: LAYER-3
 
 ## Item Categories
 
@@ -81,7 +81,7 @@ Items are classified into distinct categories to organize interactions, renderin
 
 ---
 
-# Mobs (Mob object)
+# Mobs (Mob object): LAYER-4
 
 ## Passive Mobs (PassiveMob Object)
 
