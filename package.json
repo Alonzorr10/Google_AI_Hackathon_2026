@@ -1,0 +1,12 @@
+{
+  "name": "google-ai-hackathon-game",
+  "version": "1.0.0",
+  "description": "Terraria-style survival game",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}
