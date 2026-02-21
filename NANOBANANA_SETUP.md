@@ -33,7 +33,7 @@ NanoBanana is an AI image generation API specifically optimized for creating pix
 
 Example key format:
 ```
-sk_live_abcdef1234567890abcdef1234567890
+
 ```
 
 ### Step 3: Add API Key to Game
