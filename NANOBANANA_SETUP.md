@@ -52,9 +52,7 @@ Replace with:
 const game = new Game(canvas, "sk_live_YOUR_API_KEY_HERE");
 ```
 
-Example:
-```javascript
-const game = new Game(canvas, "sk_live_abc123def456");
+
 ```
 
 #### Option B: Environment Variable (Recommended)
