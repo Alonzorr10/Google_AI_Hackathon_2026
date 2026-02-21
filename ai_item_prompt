@@ -1,0 +1,64 @@
+# Game Items: LAYER-3 (AI-Augmented Logic)
+
+## Item Categories & Type-Def
+
+To ensure the `Generator` creates items the game can actually "read," every AI-generated item must map to a `BaseType`:
+
+* **Melee/Ranged:** Requires `damage`, `knockback`, and `swingSpeed`.
+* **Tool:** Requires `minePower` and `toolType` (Pickaxe, Axe, Hammer).
+* **Block:** Requires `isSolid` and `lightEmission`.
+* **Consumable:** Requires `buffDuration` and `healAmount`.
+
+## AI-Powered Crafting (`CraftingUI`)
+
+* **The Input:** A text-area for natural language (e.g., *"Make me a flaming sword using my 2 Iron Bars and 1 Torch"*).
+* **The Context:** The UI must pass the **Player’s Inventory JSON** to the `Analyzer` so the AI knows what materials are actually available.
+
+## Item Request Analyzer (`Analyzer`)
+
+* **The "Logic Gate":** The AI must perform a **Conservation of Mass/Energy** check.
+* *Invalid:* "Make a nuclear bomb out of 1 Dirt block."
+* *Valid:* "Make a sharp stone shiv out of 2 Flint."
+
+
+* **Output:** If valid, it returns a `RecipeManifest` (Materials to be consumed). If invalid, it returns a flavor-text error message (e.g., *"The materials lack the structural integrity for such a design."*).
+
+## Item Generator (`Generator` - Powered by Nano Banana)
+
+This object must output a **JSON object**, not just text. The prompt to the AI should look like this:
+
+* **Visual Generation:** Uses Nano Banana to generate a  pixel sprite based on the description.
+* **Stat Scaling:** Stats are determined by material quality.
+* *Formula:* .
+
+
+
+### Example Generated JSON Schema:
+
+```json
+{
+  "id": "gen_flame_blade_001",
+  "name": "Searing Ember-Edge",
+  "description": "A crude iron blade infused with the essence of a dying torch.",
+  "type": "Melee",
+  "stats": { "damage": 12, "burn_chance": 0.25, "speed": 1.2 },
+  "sprite_seed": "882341",
+  "rarity": "Uncommon"
+}
+
+```
+
+## Caching System (`CacheManager`)
+
+* **Hashing:** Creates a unique hash based on `(InputString + MaterialIDs)`.
+* **Retrieval:** Before calling the AI API, the system checks the `LocalSync` hash table. This prevents redundant API calls and keeps "The Searing Ember-Edge" consistent across the game world.
+
+---
+
+# Implementation Strategy for Gemini-3.1
+
+To help the AI build this, you should ask it to:
+
+1. **Create the JSON Parser:** A function that takes the AI's "Generated Item" and hooks it into the player's `equip()` and `attack()` functions.
+2. **Stateful API Wrapper:** A script that sends the prompt + Inventory list to the LLM and waits for a structured response.
+3. **The "Material Dictionary":** A reference list of materials and their "hidden properties" (e.g., *Gold = High Magic, Low Durability*) so the AI can calculate stats accurately.
