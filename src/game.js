@@ -7,8 +7,14 @@ import { ItemGenerator, CraftingUI } from './crafting.js';
 import { PassiveMob, EnemyMob, EnemyAI, spawnMobs } from './mobs.js';
 import { Renderer } from './renderer.js';
 
+// load .env variables
+require('dotenv').config();
+
+let nano_apiKey = process.env.NANO_BANANA_API_KEY;
+
 export class Game {
-  constructor(canvas, nanoBananaApiKey = null) {
+
+  constructor(canvas, nanoBananaApiKey = nano_apiKey) {
     console.log('🎮 Game constructor called');
     this.canvas = canvas;
     this.nanoBananaApiKey = nanoBananaApiKey;
